@@ -20,7 +20,7 @@ def main():
 
         # Detecta o gesto e desenha os pontos no frame
         gesture = detect_gesture(frame)
-        if gesture == "ok":
+        if gesture:
             print("Gesto  detectado! Salvando vídeo dos últimos 30 segundos.")
             save_path = save_video_with_watermark(fps)
             

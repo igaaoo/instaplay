@@ -1,0 +1,5 @@
+*.mp4
+
+# Ignore python caches
+*.pyc
+__pycache__/
