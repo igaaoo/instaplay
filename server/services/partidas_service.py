@@ -11,7 +11,7 @@ def criar_partida(codigo, pagamento, data_inicio, data_fim=None):
             data_fim=data_fim
         )
         session.add(nova_partida)
-        session.commit()  # Salva a partida para gerar o ID
+        session.commit()  
         return nova_partida.id
 
 def adicionar_video(partida_id, path, created_at=None):
@@ -52,3 +52,35 @@ def salvar_partida_com_videos(partida):
             )
 
         return nova_partida_id
+    
+def pegar_partida(codigo):
+    with get_db_session() as session:
+        partida = session.query(Partida).filter_by(codigo=codigo).first()
+        
+        if partida:
+            return partida
+        
+        raise ValueError("Partida não encontrada com o código fornecido.")
+    
+
+def pegar_jogadas_por_partida(partida_id):
+    with get_db_session() as session:
+        partida = session.query(Partida).filter_by(id=partida_id).first()
+        if not partida:
+            raise ValueError("Partida não encontrada.")
+        
+        if not partida.pagamento:
+            raise ValueError("Pagamento não realizado para esta partida.")
+        
+        videos = session.query(PartidaVideos).filter_by(partida_id=partida_id).all()
+        if videos:
+            return [
+                {
+                    'id': video.id,
+                    'partida_id': video.partida_id,
+                    'path': video.path,
+                    'created_at': video.created_at
+                } for video in videos
+            ]
+        else:
+            raise ValueError("Jogadas para a partida não encontradas.")

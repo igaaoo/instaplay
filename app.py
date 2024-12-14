@@ -8,7 +8,7 @@ from camera.gestureDetection import detect_gesture
 from processing.bufferManager import add_frame_to_buffer
 from processing.videoSaver import save_video_with_watermark
 from server.server import app
-from services.partidas_service import salvar_partida_com_videos
+from server.services.partidas_service import salvar_partida_com_videos
 
 def main():
     cap, fps = start_video_capture()
