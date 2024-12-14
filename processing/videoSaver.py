@@ -1,7 +1,14 @@
+import datetime
 import cv2
 import numpy as np
 from config import VIDEO_PATH, WATERMARK_PATH
 from processing.bufferManager import get_buffer_frames
+import uuid
+
+def generate_new_path_name():
+    now = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    unique_key = str(uuid.uuid1())
+    return f"static/videos/{now}-{unique_key}.mp4"
 
 def save_video_with_watermark(fps):
     frames = get_buffer_frames()
@@ -9,13 +16,13 @@ def save_video_with_watermark(fps):
         print("Buffer vazio. Nenhum vídeo para salvar.")
         return None
 
-
+    new_path = generate_new_path_name()
     # Remova os últimos segundos de frames para evitar salvar o gesto
     frames_to_remove = int(fps * 2)
     frames = frames[:-frames_to_remove]
 
     # Defina o caminho do vídeo como .mp4
-    video_path_mp4 = VIDEO_PATH.replace('.avi', '.mp4')
+    video_path_mp4 = new_path.replace('.avi', '.mp4')
 
     # Inicialize o escritor de vídeo com a resolução do primeiro frame e o codec H264 para MP4
     frame_height, frame_width = frames[0].shape[:2]
