@@ -8,7 +8,7 @@ import uuid
 def generate_new_path_name():
     now = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
     unique_key = str(uuid.uuid1())
-    return f"static/videos/{now}-{unique_key}.mp4"
+    return f"{now}-{unique_key}.mp4"
 
 def save_video_with_watermark(fps):
     frames = get_buffer_frames()
@@ -26,7 +26,7 @@ def save_video_with_watermark(fps):
 
     # Inicialize o escritor de vídeo com a resolução do primeiro frame e o codec H264 para MP4
     frame_height, frame_width = frames[0].shape[:2]
-    out = cv2.VideoWriter(video_path_mp4, cv2.VideoWriter_fourcc(*'mp4v'), fps, (frame_width, frame_height))
+    out = cv2.VideoWriter(f"{VIDEO_PATH}{video_path_mp4}", cv2.VideoWriter_fourcc(*'mp4v'), fps, (frame_width, frame_height))
 
     # Carregar o logo com transparência (RGBA)
     logo = cv2.imread(WATERMARK_PATH, cv2.IMREAD_UNCHANGED)

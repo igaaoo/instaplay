@@ -1,5 +1,7 @@
 import datetime
+import hashlib
 import time
+import uuid
 import cv2
 from camera.videoCapture import start_video_capture
 from camera.gestureDetection import detect_gesture
@@ -9,11 +11,13 @@ from server.server import app
 from services.partidas_service import salvar_partida_com_videos
 
 def main():
-    # Inicializa a captura de vídeo
     cap, fps = start_video_capture()
+    now = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    unique_key = str(uuid.uuid1())
+    codigo = hashlib.md5(unique_key.encode()).hexdigest()
 
     partida = {
-        "codigo": "codigo_unico",  
+        "codigo": codigo,  
         "pagamento": False,
         "data_inicio": datetime.datetime.now(),
         "data_fim": None,
