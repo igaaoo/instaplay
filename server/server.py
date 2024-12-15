@@ -1,12 +1,25 @@
+import os
 from flask import Flask, jsonify, send_file
+from flask_cors import CORS
 
 from services.partidas_service import pegar_jogadas_por_partida, pegar_partida
 
 app = Flask(__name__)
+CORS(app)
 
-@app.route('/jogada')
-def download_video():
-    return "send_file(VIDEO_PATH, as_attachment=True)"
+BASE_DIRECTORY = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+VIDEO_DIRECTORY = os.path.join(BASE_DIRECTORY, 'static', 'videos')
+
+@app.route('/api/videos/<filename>', methods=['GET'])
+def get_video(filename):
+    video_path = os.path.join(VIDEO_DIRECTORY, filename)
+    print(f"video_path {video_path}")
+    if os.path.exists(video_path):
+        print("tem video")
+        response = send_file(video_path, as_attachment=True, mimetype='video/mp4')
+        return response
+    else:
+        return jsonify({"error": "Video not found"}), 404
 
 @app.route('/partida/<codigo>', methods=['GET'])
 def obter_partida(codigo):

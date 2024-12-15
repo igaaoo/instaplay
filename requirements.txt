@@ -3,3 +3,4 @@ mediapipe
 flask
 sqlalchemy
 psycopg2
+flask-cors
