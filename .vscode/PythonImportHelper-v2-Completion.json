@@ -1,0 +1,702 @@
+[
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "mediapipe",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mediapipe",
+        "description": "mediapipe",
+        "detail": "mediapipe",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "collections",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "collections",
+        "description": "collections",
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "BUFFER_SIZE",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "VIDEO_PATH",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "WATERMARK_PATH",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "get_buffer_frames",
+        "importPath": "processing.bufferManager",
+        "description": "processing.bufferManager",
+        "isExtraImport": true,
+        "detail": "processing.bufferManager",
+        "documentation": {}
+    },
+    {
+        "label": "add_frame_to_buffer",
+        "importPath": "processing.bufferManager",
+        "description": "processing.bufferManager",
+        "isExtraImport": true,
+        "detail": "processing.bufferManager",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "UUID",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "TIMESTAMP",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Boolean",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "declarative_base",
+        "importPath": "sqlalchemy.ext.declarative",
+        "description": "sqlalchemy.ext.declarative",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.declarative",
+        "documentation": {}
+    },
+    {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Partida",
+        "importPath": "server.db.connection",
+        "description": "server.db.connection",
+        "isExtraImport": true,
+        "detail": "server.db.connection",
+        "documentation": {}
+    },
+    {
+        "label": "PartidaVideos",
+        "importPath": "server.db.connection",
+        "description": "server.db.connection",
+        "isExtraImport": true,
+        "detail": "server.db.connection",
+        "documentation": {}
+    },
+    {
+        "label": "get_db_session",
+        "importPath": "server.db.connection",
+        "description": "server.db.connection",
+        "isExtraImport": true,
+        "detail": "server.db.connection",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "send_file",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "pegar_jogadas_por_partida",
+        "importPath": "services.partidas_service",
+        "description": "services.partidas_service",
+        "isExtraImport": true,
+        "detail": "services.partidas_service",
+        "documentation": {}
+    },
+    {
+        "label": "pegar_partida",
+        "importPath": "services.partidas_service",
+        "description": "services.partidas_service",
+        "isExtraImport": true,
+        "detail": "services.partidas_service",
+        "documentation": {}
+    },
+    {
+        "label": "base64",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "base64",
+        "description": "base64",
+        "detail": "base64",
+        "documentation": {}
+    },
+    {
+        "label": "hashlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "detect_gesture",
+        "importPath": "camera.gestureDetection",
+        "description": "camera.gestureDetection",
+        "isExtraImport": true,
+        "detail": "camera.gestureDetection",
+        "documentation": {}
+    },
+    {
+        "label": "start_video_capture",
+        "importPath": "camera.videoCapture",
+        "description": "camera.videoCapture",
+        "isExtraImport": true,
+        "detail": "camera.videoCapture",
+        "documentation": {}
+    },
+    {
+        "label": "save_video_with_watermark",
+        "importPath": "processing.videoSaver",
+        "description": "processing.videoSaver",
+        "isExtraImport": true,
+        "detail": "processing.videoSaver",
+        "documentation": {}
+    },
+    {
+        "label": "salvar_partida_com_videos",
+        "importPath": "server.services.partidas_service",
+        "description": "server.services.partidas_service",
+        "isExtraImport": true,
+        "detail": "server.services.partidas_service",
+        "documentation": {}
+    },
+    {
+        "label": "detect_gesture",
+        "kind": 2,
+        "importPath": "camera.gestureDetection",
+        "description": "camera.gestureDetection",
+        "peekOfCode": "def detect_gesture(frame):\n    global last_detection_time, gesture_counter\n    current_time = time.time()\n    # Converte o frame para RGB\n    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = pose.process(frame_rgb)\n    # Verificar se o corpo foi detectado\n    if results.pose_landmarks:\n        # Pega os landmarks específicos para verificar a posição dos braços\n        left_shoulder = results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_SHOULDER]",
+        "detail": "camera.gestureDetection",
+        "documentation": {}
+    },
+    {
+        "label": "mp_pose",
+        "kind": 5,
+        "importPath": "camera.gestureDetection",
+        "description": "camera.gestureDetection",
+        "peekOfCode": "mp_pose = mp.solutions.pose\npose = mp_pose.Pose(static_image_mode=False, min_detection_confidence=0.7)\nmp_drawing = mp.solutions.drawing_utils  # Para desenhar os pontos do corpo\nlast_detection_time = 0\nCOOLDOWN_PERIOD = 5  # em segundos\n# Configuração dinâmica de frames necessários\ncap = cv2.VideoCapture(0)  # Iniciar a câmera\nfps = cap.get(cv2.CAP_PROP_FPS) or 30  # Obter FPS da câmera, default para 30 se não disponível\nGESTURE_FRAMES = int(fps * 2)  # Número de frames consecutivos para considerar gesto\n# Variáveis para detecção baseada em frequência",
+        "detail": "camera.gestureDetection",
+        "documentation": {}
+    },
+    {
+        "label": "pose",
+        "kind": 5,
+        "importPath": "camera.gestureDetection",
+        "description": "camera.gestureDetection",
+        "peekOfCode": "pose = mp_pose.Pose(static_image_mode=False, min_detection_confidence=0.7)\nmp_drawing = mp.solutions.drawing_utils  # Para desenhar os pontos do corpo\nlast_detection_time = 0\nCOOLDOWN_PERIOD = 5  # em segundos\n# Configuração dinâmica de frames necessários\ncap = cv2.VideoCapture(0)  # Iniciar a câmera\nfps = cap.get(cv2.CAP_PROP_FPS) or 30  # Obter FPS da câmera, default para 30 se não disponível\nGESTURE_FRAMES = int(fps * 2)  # Número de frames consecutivos para considerar gesto\n# Variáveis para detecção baseada em frequência\ngesture_counter = 0",
+        "detail": "camera.gestureDetection",
+        "documentation": {}
+    },
+    {
+        "label": "mp_drawing",
+        "kind": 5,
+        "importPath": "camera.gestureDetection",
+        "description": "camera.gestureDetection",
+        "peekOfCode": "mp_drawing = mp.solutions.drawing_utils  # Para desenhar os pontos do corpo\nlast_detection_time = 0\nCOOLDOWN_PERIOD = 5  # em segundos\n# Configuração dinâmica de frames necessários\ncap = cv2.VideoCapture(0)  # Iniciar a câmera\nfps = cap.get(cv2.CAP_PROP_FPS) or 30  # Obter FPS da câmera, default para 30 se não disponível\nGESTURE_FRAMES = int(fps * 2)  # Número de frames consecutivos para considerar gesto\n# Variáveis para detecção baseada em frequência\ngesture_counter = 0\ndef detect_gesture(frame):",
+        "detail": "camera.gestureDetection",
+        "documentation": {}
+    },
+    {
+        "label": "last_detection_time",
+        "kind": 5,
+        "importPath": "camera.gestureDetection",
+        "description": "camera.gestureDetection",
+        "peekOfCode": "last_detection_time = 0\nCOOLDOWN_PERIOD = 5  # em segundos\n# Configuração dinâmica de frames necessários\ncap = cv2.VideoCapture(0)  # Iniciar a câmera\nfps = cap.get(cv2.CAP_PROP_FPS) or 30  # Obter FPS da câmera, default para 30 se não disponível\nGESTURE_FRAMES = int(fps * 2)  # Número de frames consecutivos para considerar gesto\n# Variáveis para detecção baseada em frequência\ngesture_counter = 0\ndef detect_gesture(frame):\n    global last_detection_time, gesture_counter",
+        "detail": "camera.gestureDetection",
+        "documentation": {}
+    },
+    {
+        "label": "COOLDOWN_PERIOD",
+        "kind": 5,
+        "importPath": "camera.gestureDetection",
+        "description": "camera.gestureDetection",
+        "peekOfCode": "COOLDOWN_PERIOD = 5  # em segundos\n# Configuração dinâmica de frames necessários\ncap = cv2.VideoCapture(0)  # Iniciar a câmera\nfps = cap.get(cv2.CAP_PROP_FPS) or 30  # Obter FPS da câmera, default para 30 se não disponível\nGESTURE_FRAMES = int(fps * 2)  # Número de frames consecutivos para considerar gesto\n# Variáveis para detecção baseada em frequência\ngesture_counter = 0\ndef detect_gesture(frame):\n    global last_detection_time, gesture_counter\n    current_time = time.time()",
+        "detail": "camera.gestureDetection",
+        "documentation": {}
+    },
+    {
+        "label": "cap",
+        "kind": 5,
+        "importPath": "camera.gestureDetection",
+        "description": "camera.gestureDetection",
+        "peekOfCode": "cap = cv2.VideoCapture(0)  # Iniciar a câmera\nfps = cap.get(cv2.CAP_PROP_FPS) or 30  # Obter FPS da câmera, default para 30 se não disponível\nGESTURE_FRAMES = int(fps * 2)  # Número de frames consecutivos para considerar gesto\n# Variáveis para detecção baseada em frequência\ngesture_counter = 0\ndef detect_gesture(frame):\n    global last_detection_time, gesture_counter\n    current_time = time.time()\n    # Converte o frame para RGB\n    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)",
+        "detail": "camera.gestureDetection",
+        "documentation": {}
+    },
+    {
+        "label": "fps",
+        "kind": 5,
+        "importPath": "camera.gestureDetection",
+        "description": "camera.gestureDetection",
+        "peekOfCode": "fps = cap.get(cv2.CAP_PROP_FPS) or 30  # Obter FPS da câmera, default para 30 se não disponível\nGESTURE_FRAMES = int(fps * 2)  # Número de frames consecutivos para considerar gesto\n# Variáveis para detecção baseada em frequência\ngesture_counter = 0\ndef detect_gesture(frame):\n    global last_detection_time, gesture_counter\n    current_time = time.time()\n    # Converte o frame para RGB\n    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = pose.process(frame_rgb)",
+        "detail": "camera.gestureDetection",
+        "documentation": {}
+    },
+    {
+        "label": "GESTURE_FRAMES",
+        "kind": 5,
+        "importPath": "camera.gestureDetection",
+        "description": "camera.gestureDetection",
+        "peekOfCode": "GESTURE_FRAMES = int(fps * 2)  # Número de frames consecutivos para considerar gesto\n# Variáveis para detecção baseada em frequência\ngesture_counter = 0\ndef detect_gesture(frame):\n    global last_detection_time, gesture_counter\n    current_time = time.time()\n    # Converte o frame para RGB\n    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = pose.process(frame_rgb)\n    # Verificar se o corpo foi detectado",
+        "detail": "camera.gestureDetection",
+        "documentation": {}
+    },
+    {
+        "label": "gesture_counter",
+        "kind": 5,
+        "importPath": "camera.gestureDetection",
+        "description": "camera.gestureDetection",
+        "peekOfCode": "gesture_counter = 0\ndef detect_gesture(frame):\n    global last_detection_time, gesture_counter\n    current_time = time.time()\n    # Converte o frame para RGB\n    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = pose.process(frame_rgb)\n    # Verificar se o corpo foi detectado\n    if results.pose_landmarks:\n        # Pega os landmarks específicos para verificar a posição dos braços",
+        "detail": "camera.gestureDetection",
+        "documentation": {}
+    },
+    {
+        "label": "start_video_capture",
+        "kind": 2,
+        "importPath": "camera.videoCapture",
+        "description": "camera.videoCapture",
+        "peekOfCode": "def start_video_capture():\n    cap = cv2.VideoCapture('http://192.168.18.32:4747/video')  # '0' para webcam; substituir por URL de câmera IP para acesso remoto\n    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)\n    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)\n    # Captura o FPS da câmera\n    fps = cap.get(cv2.CAP_PROP_FPS)\n    return cap, fps",
+        "detail": "camera.videoCapture",
+        "documentation": {}
+    },
+    {
+        "label": "add_frame_to_buffer",
+        "kind": 2,
+        "importPath": "processing.bufferManager",
+        "description": "processing.bufferManager",
+        "peekOfCode": "def add_frame_to_buffer(frame):\n    buffer.append(frame)\ndef get_buffer_frames():\n    return list(buffer)",
+        "detail": "processing.bufferManager",
+        "documentation": {}
+    },
+    {
+        "label": "get_buffer_frames",
+        "kind": 2,
+        "importPath": "processing.bufferManager",
+        "description": "processing.bufferManager",
+        "peekOfCode": "def get_buffer_frames():\n    return list(buffer)",
+        "detail": "processing.bufferManager",
+        "documentation": {}
+    },
+    {
+        "label": "buffer",
+        "kind": 5,
+        "importPath": "processing.bufferManager",
+        "description": "processing.bufferManager",
+        "peekOfCode": "buffer = deque(maxlen=BUFFER_SIZE)\ndef add_frame_to_buffer(frame):\n    buffer.append(frame)\ndef get_buffer_frames():\n    return list(buffer)",
+        "detail": "processing.bufferManager",
+        "documentation": {}
+    },
+    {
+        "label": "generate_new_path_name",
+        "kind": 2,
+        "importPath": "processing.videoSaver",
+        "description": "processing.videoSaver",
+        "peekOfCode": "def generate_new_path_name():\n    now = datetime.datetime.now().strftime(\"%Y%m%d%H%M%S\")\n    unique_key = str(uuid.uuid1())\n    return f\"{now}-{unique_key}.mp4\"\ndef save_video_with_watermark(fps):\n    frames = get_buffer_frames()\n    if not frames:\n        print(\"Buffer vazio. Nenhum vídeo para salvar.\")\n        return None\n    new_path = generate_new_path_name()",
+        "detail": "processing.videoSaver",
+        "documentation": {}
+    },
+    {
+        "label": "save_video_with_watermark",
+        "kind": 2,
+        "importPath": "processing.videoSaver",
+        "description": "processing.videoSaver",
+        "peekOfCode": "def save_video_with_watermark(fps):\n    frames = get_buffer_frames()\n    if not frames:\n        print(\"Buffer vazio. Nenhum vídeo para salvar.\")\n        return None\n    new_path = generate_new_path_name()\n    # Remova os últimos segundos de frames para evitar salvar o gesto\n    frames_to_remove = int(fps * 2)\n    frames = frames[:-frames_to_remove]\n    # Defina o caminho do vídeo como .mp4",
+        "detail": "processing.videoSaver",
+        "documentation": {}
+    },
+    {
+        "label": "Partida",
+        "kind": 6,
+        "importPath": "server.db.connection",
+        "description": "server.db.connection",
+        "peekOfCode": "class Partida(Base):\n    __tablename__ = 'partida'\n    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)\n    codigo = Column(String(50), nullable=False)\n    pagamento = Column(Boolean)\n    data_inicio = Column(TIMESTAMP, nullable=False)\n    data_fim = Column(TIMESTAMP, nullable=True)\n    created_at = Column(TIMESTAMP, server_default=func.now())\nclass PartidaVideos(Base):\n    __tablename__ = 'partida_videos'",
+        "detail": "server.db.connection",
+        "documentation": {}
+    },
+    {
+        "label": "PartidaVideos",
+        "kind": 6,
+        "importPath": "server.db.connection",
+        "description": "server.db.connection",
+        "peekOfCode": "class PartidaVideos(Base):\n    __tablename__ = 'partida_videos'\n    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)\n    partida_id = Column(UUID(as_uuid=True), nullable=False)\n    path = Column(String(255), nullable=False)\n    thumbnail = Column(String, nullable=True)  # Nova coluna para armazenar a imagem em Base64\n    created_at = Column(TIMESTAMP, server_default=func.now())\n# Base.metadata.create_all(bind=engine)\ndef get_db_session():\n    db = SessionLocal()",
+        "detail": "server.db.connection",
+        "documentation": {}
+    },
+    {
+        "label": "get_db_session",
+        "kind": 2,
+        "importPath": "server.db.connection",
+        "description": "server.db.connection",
+        "peekOfCode": "def get_db_session():\n    db = SessionLocal()\n    return db",
+        "detail": "server.db.connection",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_URL",
+        "kind": 5,
+        "importPath": "server.db.connection",
+        "description": "server.db.connection",
+        "peekOfCode": "DATABASE_URL = \"postgresql://{user}:{password}@{host}:{port}/{db}\".format(\n    user=\"teste\",\n    password=\"teste%40123\",\n    host=\"localhost\",\n    port=\"5432\",\n    db=\"instaplay\"\n)\nengine = create_engine(\n    DATABASE_URL,\n    connect_args={'options': '-c client_encoding=utf8'}",
+        "detail": "server.db.connection",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "server.db.connection",
+        "description": "server.db.connection",
+        "peekOfCode": "engine = create_engine(\n    DATABASE_URL,\n    connect_args={'options': '-c client_encoding=utf8'}\n)\n# Criando a engine e a sessão\nSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\nBase = declarative_base()\nclass Partida(Base):\n    __tablename__ = 'partida'\n    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)",
+        "detail": "server.db.connection",
+        "documentation": {}
+    },
+    {
+        "label": "SessionLocal",
+        "kind": 5,
+        "importPath": "server.db.connection",
+        "description": "server.db.connection",
+        "peekOfCode": "SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\nBase = declarative_base()\nclass Partida(Base):\n    __tablename__ = 'partida'\n    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)\n    codigo = Column(String(50), nullable=False)\n    pagamento = Column(Boolean)\n    data_inicio = Column(TIMESTAMP, nullable=False)\n    data_fim = Column(TIMESTAMP, nullable=True)\n    created_at = Column(TIMESTAMP, server_default=func.now())",
+        "detail": "server.db.connection",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "kind": 5,
+        "importPath": "server.db.connection",
+        "description": "server.db.connection",
+        "peekOfCode": "Base = declarative_base()\nclass Partida(Base):\n    __tablename__ = 'partida'\n    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)\n    codigo = Column(String(50), nullable=False)\n    pagamento = Column(Boolean)\n    data_inicio = Column(TIMESTAMP, nullable=False)\n    data_fim = Column(TIMESTAMP, nullable=True)\n    created_at = Column(TIMESTAMP, server_default=func.now())\nclass PartidaVideos(Base):",
+        "detail": "server.db.connection",
+        "documentation": {}
+    },
+    {
+        "label": "criar_partida",
+        "kind": 2,
+        "importPath": "server.services.partidas_service",
+        "description": "server.services.partidas_service",
+        "peekOfCode": "def criar_partida(codigo, pagamento, data_inicio, data_fim=None):\n    with get_db_session() as session:\n        nova_partida = Partida(\n            codigo=codigo,\n            pagamento=pagamento,\n            data_inicio=data_inicio,\n            data_fim=data_fim\n        )\n        session.add(nova_partida)\n        session.commit()  ",
+        "detail": "server.services.partidas_service",
+        "documentation": {}
+    },
+    {
+        "label": "adicionar_video",
+        "kind": 2,
+        "importPath": "server.services.partidas_service",
+        "description": "server.services.partidas_service",
+        "peekOfCode": "def adicionar_video(partida_id, path, thumbnail, created_at=None):\n    created_at = created_at or datetime.now()\n    with get_db_session() as session:\n        novo_video = PartidaVideos(\n            partida_id=partida_id,\n            path=path,\n            thumbnail=thumbnail,\n            created_at=created_at\n        )\n        session.add(novo_video)",
+        "detail": "server.services.partidas_service",
+        "documentation": {}
+    },
+    {
+        "label": "finalizar_partida",
+        "kind": 2,
+        "importPath": "server.services.partidas_service",
+        "description": "server.services.partidas_service",
+        "peekOfCode": "def finalizar_partida(partida_id, data_fim=None):\n    data_fim = data_fim or datetime.now()\n    with get_db_session() as session:\n        partida = session.query(Partida).filter_by(id=partida_id).first()\n        if partida:\n            partida.data_fim = data_fim\n            session.commit()\n        else:\n            raise ValueError(\"Partida não encontrada.\")\ndef salvar_partida_com_videos(partida):",
+        "detail": "server.services.partidas_service",
+        "documentation": {}
+    },
+    {
+        "label": "salvar_partida_com_videos",
+        "kind": 2,
+        "importPath": "server.services.partidas_service",
+        "description": "server.services.partidas_service",
+        "peekOfCode": "def salvar_partida_com_videos(partida):\n    with get_db_session():\n        nova_partida_id = criar_partida(\n            codigo=partida[\"codigo\"],\n            pagamento=partida[\"pagamento\"],\n            data_inicio=partida[\"data_inicio\"],\n            data_fim=partida.get(\"data_fim\")\n        )\n        for video in partida[\"videos\"]:\n            adicionar_video(",
+        "detail": "server.services.partidas_service",
+        "documentation": {}
+    },
+    {
+        "label": "pegar_partida",
+        "kind": 2,
+        "importPath": "server.services.partidas_service",
+        "description": "server.services.partidas_service",
+        "peekOfCode": "def pegar_partida(codigo):\n    with get_db_session() as session:\n        partida = session.query(Partida).filter_by(codigo=codigo).first()\n        if partida:\n            return partida\n        raise ValueError(\"Partida não encontrada com o código fornecido.\")\ndef pegar_jogadas_por_partida(partida_id):\n    with get_db_session() as session:\n        partida = session.query(Partida).filter_by(id=partida_id).first()\n        if not partida:",
+        "detail": "server.services.partidas_service",
+        "documentation": {}
+    },
+    {
+        "label": "pegar_jogadas_por_partida",
+        "kind": 2,
+        "importPath": "server.services.partidas_service",
+        "description": "server.services.partidas_service",
+        "peekOfCode": "def pegar_jogadas_por_partida(partida_id):\n    with get_db_session() as session:\n        partida = session.query(Partida).filter_by(id=partida_id).first()\n        if not partida:\n            raise ValueError(\"Partida não encontrada.\")\n        if not partida.pagamento:\n            raise ValueError(\"Pagamento não realizado para esta partida.\")\n        videos = session.query(PartidaVideos).filter_by(partida_id=partida_id).all()\n        if videos:\n            return [",
+        "detail": "server.services.partidas_service",
+        "documentation": {}
+    },
+    {
+        "label": "get_video",
+        "kind": 2,
+        "importPath": "server.server",
+        "description": "server.server",
+        "peekOfCode": "def get_video(filename):\n    video_path = os.path.join(VIDEO_DIRECTORY, filename)\n    print(f\"video_path {video_path}\")\n    if os.path.exists(video_path):\n        print(\"tem video\")\n        response = send_file(video_path, as_attachment=True, mimetype='video/mp4')\n        return response\n    else:\n        return jsonify({\"error\": \"Video not found\"}), 404\n@app.route('/partida/<codigo>', methods=['GET'])",
+        "detail": "server.server",
+        "documentation": {}
+    },
+    {
+        "label": "obter_partida",
+        "kind": 2,
+        "importPath": "server.server",
+        "description": "server.server",
+        "peekOfCode": "def obter_partida(codigo):\n    try:\n        partida = pegar_partida(codigo)\n        if partida:\n            return jsonify({\n                'id': partida.id,\n                'codigo': partida.codigo,\n                'pagamento': partida.pagamento,\n                'data_inicio': partida.data_inicio,\n                'data_fim': partida.data_fim",
+        "detail": "server.server",
+        "documentation": {}
+    },
+    {
+        "label": "obter_jogadas_por_partida",
+        "kind": 2,
+        "importPath": "server.server",
+        "description": "server.server",
+        "peekOfCode": "def obter_jogadas_por_partida(partida_id):\n    try:\n        jogadas = pegar_jogadas_por_partida(partida_id)\n        if jogadas:\n            return jsonify(jogadas), 200\n        else:\n            return jsonify({'message': 'Jogadas para a partida não encontradas'}), 404\n    except ValueError as e:\n        return jsonify({'message': str(e)}), 400\nif __name__ == '__main__':",
+        "detail": "server.server",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "server.server",
+        "description": "server.server",
+        "peekOfCode": "app = Flask(__name__)\nCORS(app)\nBASE_DIRECTORY = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))\nVIDEO_DIRECTORY = os.path.join(BASE_DIRECTORY, 'static', 'videos')\n@app.route('/api/videos/<filename>', methods=['GET'])\ndef get_video(filename):\n    video_path = os.path.join(VIDEO_DIRECTORY, filename)\n    print(f\"video_path {video_path}\")\n    if os.path.exists(video_path):\n        print(\"tem video\")",
+        "detail": "server.server",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIRECTORY",
+        "kind": 5,
+        "importPath": "server.server",
+        "description": "server.server",
+        "peekOfCode": "BASE_DIRECTORY = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))\nVIDEO_DIRECTORY = os.path.join(BASE_DIRECTORY, 'static', 'videos')\n@app.route('/api/videos/<filename>', methods=['GET'])\ndef get_video(filename):\n    video_path = os.path.join(VIDEO_DIRECTORY, filename)\n    print(f\"video_path {video_path}\")\n    if os.path.exists(video_path):\n        print(\"tem video\")\n        response = send_file(video_path, as_attachment=True, mimetype='video/mp4')\n        return response",
+        "detail": "server.server",
+        "documentation": {}
+    },
+    {
+        "label": "VIDEO_DIRECTORY",
+        "kind": 5,
+        "importPath": "server.server",
+        "description": "server.server",
+        "peekOfCode": "VIDEO_DIRECTORY = os.path.join(BASE_DIRECTORY, 'static', 'videos')\n@app.route('/api/videos/<filename>', methods=['GET'])\ndef get_video(filename):\n    video_path = os.path.join(VIDEO_DIRECTORY, filename)\n    print(f\"video_path {video_path}\")\n    if os.path.exists(video_path):\n        print(\"tem video\")\n        response = send_file(video_path, as_attachment=True, mimetype='video/mp4')\n        return response\n    else:",
+        "detail": "server.server",
+        "documentation": {}
+    },
+    {
+        "label": "frame_to_base64",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def frame_to_base64(frame):\n    _, buffer = cv2.imencode('.jpg', frame)  # Converte o frame para JPG\n    frame_base64 = base64.b64encode(buffer).decode('utf-8')  # Codifica como Base64\n    return frame_base64\ndef main():\n    cap, fps = start_video_capture()\n    now = datetime.datetime.now().strftime(\"%Y%m%d%H%M%S\")\n    unique_key = str(uuid.uuid1())\n    codigo = hashlib.md5(unique_key.encode()).hexdigest()\n    partida = {",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def main():\n    cap, fps = start_video_capture()\n    now = datetime.datetime.now().strftime(\"%Y%m%d%H%M%S\")\n    unique_key = str(uuid.uuid1())\n    codigo = hashlib.md5(unique_key.encode()).hexdigest()\n    partida = {\n        \"codigo\": codigo,  \n        \"pagamento\": False,\n        \"data_inicio\": datetime.datetime.now(),\n        \"data_fim\": None,",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "FPS",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "FPS = 30  # Frames por segundo\nBUFFER_SIZE = FPS * 30  # Armazena 30 segundos de frames\nVIDEO_RESOLUTION = (1280, 720)  # Resolução do vídeo\nVIDEO_PATH = \"static/videos/\"\nWATERMARK_PATH = \"static/logo.png\"",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "BUFFER_SIZE",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "BUFFER_SIZE = FPS * 30  # Armazena 30 segundos de frames\nVIDEO_RESOLUTION = (1280, 720)  # Resolução do vídeo\nVIDEO_PATH = \"static/videos/\"\nWATERMARK_PATH = \"static/logo.png\"",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "VIDEO_RESOLUTION",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "VIDEO_RESOLUTION = (1280, 720)  # Resolução do vídeo\nVIDEO_PATH = \"static/videos/\"\nWATERMARK_PATH = \"static/logo.png\"",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "VIDEO_PATH",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "VIDEO_PATH = \"static/videos/\"\nWATERMARK_PATH = \"static/logo.png\"",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "WATERMARK_PATH",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "WATERMARK_PATH = \"static/logo.png\"",
+        "detail": "config",
+        "documentation": {}
+    }
+]

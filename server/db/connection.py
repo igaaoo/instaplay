@@ -36,6 +36,7 @@ class PartidaVideos(Base):
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     partida_id = Column(UUID(as_uuid=True), nullable=False)
     path = Column(String(255), nullable=False)
+    thumbnail = Column(String, nullable=True)  # Nova coluna para armazenar a imagem em Base64
     created_at = Column(TIMESTAMP, server_default=func.now())
 
 # Base.metadata.create_all(bind=engine)

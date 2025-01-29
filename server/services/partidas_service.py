@@ -1,6 +1,7 @@
 from datetime import datetime
 
-from db.connection import Partida, PartidaVideos, get_db_session
+from server.db.connection import Partida, PartidaVideos, get_db_session
+
 
 def criar_partida(codigo, pagamento, data_inicio, data_fim=None):
     with get_db_session() as session:
@@ -14,12 +15,13 @@ def criar_partida(codigo, pagamento, data_inicio, data_fim=None):
         session.commit()  
         return nova_partida.id
 
-def adicionar_video(partida_id, path, created_at=None):
+def adicionar_video(partida_id, path, thumbnail, created_at=None):
     created_at = created_at or datetime.now()
     with get_db_session() as session:
         novo_video = PartidaVideos(
             partida_id=partida_id,
             path=path,
+            thumbnail=thumbnail,
             created_at=created_at
         )
         session.add(novo_video)
@@ -48,6 +50,7 @@ def salvar_partida_com_videos(partida):
             adicionar_video(
                 partida_id=nova_partida_id,
                 path=video["path"],
+                thumbnail=video["thumbnail"],
                 created_at=video["created_at"]
             )
 

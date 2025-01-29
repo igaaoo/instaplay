@@ -3,3 +3,4 @@
 # Ignore python caches
 *.pyc
 __pycache__/
+env
