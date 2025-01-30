@@ -191,27 +191,12 @@
         "documentation": {}
     },
     {
-        "label": "Partida",
-        "importPath": "server.db.connection",
-        "description": "server.db.connection",
+        "label": "sys",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "server.db.connection",
-        "documentation": {}
-    },
-    {
-        "label": "PartidaVideos",
-        "importPath": "server.db.connection",
-        "description": "server.db.connection",
-        "isExtraImport": true,
-        "detail": "server.db.connection",
-        "documentation": {}
-    },
-    {
-        "label": "get_db_session",
-        "importPath": "server.db.connection",
-        "description": "server.db.connection",
-        "isExtraImport": true,
-        "detail": "server.db.connection",
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
         "documentation": {}
     },
     {
@@ -221,6 +206,30 @@
         "importPath": "os",
         "description": "os",
         "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Partida",
+        "importPath": "db.connection",
+        "description": "db.connection",
+        "isExtraImport": true,
+        "detail": "db.connection",
+        "documentation": {}
+    },
+    {
+        "label": "PartidaVideos",
+        "importPath": "db.connection",
+        "description": "db.connection",
+        "isExtraImport": true,
+        "detail": "db.connection",
+        "documentation": {}
+    },
+    {
+        "label": "get_db_session",
+        "importPath": "db.connection",
+        "description": "db.connection",
+        "isExtraImport": true,
+        "detail": "db.connection",
         "documentation": {}
     },
     {
@@ -416,7 +425,7 @@
         "kind": 2,
         "importPath": "camera.videoCapture",
         "description": "camera.videoCapture",
-        "peekOfCode": "def start_video_capture():\n    cap = cv2.VideoCapture('http://192.168.18.32:4747/video')  # '0' para webcam; substituir por URL de câmera IP para acesso remoto\n    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)\n    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)\n    # Captura o FPS da câmera\n    fps = cap.get(cv2.CAP_PROP_FPS)\n    return cap, fps",
+        "peekOfCode": "def start_video_capture():\n    cap = cv2.VideoCapture('http://192.168.19.30:4747/video')  # '0' para webcam; substituir por URL de câmera IP para acesso remoto\n    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)\n    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)\n    # Captura o FPS da câmera\n    fps = cap.get(cv2.CAP_PROP_FPS)\n    return cap, fps",
         "detail": "camera.videoCapture",
         "documentation": {}
     },
@@ -479,7 +488,7 @@
         "kind": 6,
         "importPath": "server.db.connection",
         "description": "server.db.connection",
-        "peekOfCode": "class PartidaVideos(Base):\n    __tablename__ = 'partida_videos'\n    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)\n    partida_id = Column(UUID(as_uuid=True), nullable=False)\n    path = Column(String(255), nullable=False)\n    thumbnail = Column(String, nullable=True)  # Nova coluna para armazenar a imagem em Base64\n    created_at = Column(TIMESTAMP, server_default=func.now())\n# Base.metadata.create_all(bind=engine)\ndef get_db_session():\n    db = SessionLocal()",
+        "peekOfCode": "class PartidaVideos(Base):\n    __tablename__ = 'partida_videos'\n    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)\n    partida_id = Column(UUID(as_uuid=True), nullable=False)\n    path = Column(String(255), nullable=False)\n    thumbnail = Column(String, nullable=True)\n    pagamento = Column(Boolean)\n    created_at = Column(TIMESTAMP, server_default=func.now())\n# Base.metadata.create_all(bind=engine)\ndef get_db_session():",
         "detail": "server.db.connection",
         "documentation": {}
     },
@@ -596,7 +605,7 @@
         "kind": 2,
         "importPath": "server.server",
         "description": "server.server",
-        "peekOfCode": "def obter_partida(codigo):\n    try:\n        partida = pegar_partida(codigo)\n        if partida:\n            return jsonify({\n                'id': partida.id,\n                'codigo': partida.codigo,\n                'pagamento': partida.pagamento,\n                'data_inicio': partida.data_inicio,\n                'data_fim': partida.data_fim",
+        "peekOfCode": "def obter_partida(codigo):\n    print(codigo)\n    try:\n        partida = pegar_partida(codigo)\n        jogadas = pegar_jogadas_por_partida(partida.id)\n        if partida:\n            return jsonify({\n                'id': partida.id,\n                'codigo': partida.codigo,\n                'pagamento': partida.pagamento,",
         "detail": "server.server",
         "documentation": {}
     },
@@ -614,7 +623,7 @@
         "kind": 5,
         "importPath": "server.server",
         "description": "server.server",
-        "peekOfCode": "app = Flask(__name__)\nCORS(app)\nBASE_DIRECTORY = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))\nVIDEO_DIRECTORY = os.path.join(BASE_DIRECTORY, 'static', 'videos')\n@app.route('/api/videos/<filename>', methods=['GET'])\ndef get_video(filename):\n    video_path = os.path.join(VIDEO_DIRECTORY, filename)\n    print(f\"video_path {video_path}\")\n    if os.path.exists(video_path):\n        print(\"tem video\")",
+        "peekOfCode": "app = Flask(__name__)\nCORS(app)\nBASE_DIRECTORY = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))\nVIDEO_DIRECTORY = os.path.join(BASE_DIRECTORY, 'static', 'videos')\n@app.route('/partida/video/<filename>', methods=['GET'])\ndef get_video(filename):\n    video_path = os.path.join(VIDEO_DIRECTORY, filename)\n    print(f\"video_path {video_path}\")\n    if os.path.exists(video_path):\n        print(\"tem video\")",
         "detail": "server.server",
         "documentation": {}
     },
@@ -623,7 +632,7 @@
         "kind": 5,
         "importPath": "server.server",
         "description": "server.server",
-        "peekOfCode": "BASE_DIRECTORY = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))\nVIDEO_DIRECTORY = os.path.join(BASE_DIRECTORY, 'static', 'videos')\n@app.route('/api/videos/<filename>', methods=['GET'])\ndef get_video(filename):\n    video_path = os.path.join(VIDEO_DIRECTORY, filename)\n    print(f\"video_path {video_path}\")\n    if os.path.exists(video_path):\n        print(\"tem video\")\n        response = send_file(video_path, as_attachment=True, mimetype='video/mp4')\n        return response",
+        "peekOfCode": "BASE_DIRECTORY = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))\nVIDEO_DIRECTORY = os.path.join(BASE_DIRECTORY, 'static', 'videos')\n@app.route('/partida/video/<filename>', methods=['GET'])\ndef get_video(filename):\n    video_path = os.path.join(VIDEO_DIRECTORY, filename)\n    print(f\"video_path {video_path}\")\n    if os.path.exists(video_path):\n        print(\"tem video\")\n        response = send_file(video_path, as_attachment=True, mimetype='video/mp4')\n        return response",
         "detail": "server.server",
         "documentation": {}
     },
@@ -632,7 +641,7 @@
         "kind": 5,
         "importPath": "server.server",
         "description": "server.server",
-        "peekOfCode": "VIDEO_DIRECTORY = os.path.join(BASE_DIRECTORY, 'static', 'videos')\n@app.route('/api/videos/<filename>', methods=['GET'])\ndef get_video(filename):\n    video_path = os.path.join(VIDEO_DIRECTORY, filename)\n    print(f\"video_path {video_path}\")\n    if os.path.exists(video_path):\n        print(\"tem video\")\n        response = send_file(video_path, as_attachment=True, mimetype='video/mp4')\n        return response\n    else:",
+        "peekOfCode": "VIDEO_DIRECTORY = os.path.join(BASE_DIRECTORY, 'static', 'videos')\n@app.route('/partida/video/<filename>', methods=['GET'])\ndef get_video(filename):\n    video_path = os.path.join(VIDEO_DIRECTORY, filename)\n    print(f\"video_path {video_path}\")\n    if os.path.exists(video_path):\n        print(\"tem video\")\n        response = send_file(video_path, as_attachment=True, mimetype='video/mp4')\n        return response\n    else:",
         "detail": "server.server",
         "documentation": {}
     },

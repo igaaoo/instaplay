@@ -38,10 +38,8 @@ def main():
             print("Erro ao capturar o frame da câmera.")
             break
         
-        # Adiciona o frame ao buffer para possível salvamento posterior
         add_frame_to_buffer(frame)
 
-        # Detecta o gesto e desenha os pontos no frame
         gesture = detect_gesture(frame)
         if gesture:
             print("Gesto  detectado! Salvando vídeo dos últimos 30 segundos.")
@@ -54,29 +52,26 @@ def main():
             print(f"tumb {thumbnail_base64}")
             save_path = save_video_with_watermark(fps)
             
-            # Confirma se o vídeo foi salvo corretamente
             if save_path:
                 print(f"Vídeo salvo com sucesso em: {save_path}")
                 partida["videos"].append({
                     "path": save_path,
                     "thumbnail": thumbnail_base64, 
+                    "pagamento": False,
                     "created_at": datetime.datetime.now()
                 })
 
             else:
                 print("Erro ao salvar o vídeo.")
 
-        # Exibe o frame atualizado com os pontos da mão na janela de preview
         cv2.imshow("Instaplay", frame)
 
-        # Fecha a janela ao pressionar 'q' ou após 1 minuto
         if cv2.waitKey(1) & 0xFF == ord('q') or (time.time() - start_time) > time_end:
             partida["data_fim"] = datetime.datetime.now()
             break
 
     salvar_partida_com_videos(partida)
 
-    # Libera a câmera e fecha a janela
     cap.release()
     cv2.destroyAllWindows()
 

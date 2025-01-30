@@ -1,19 +1,23 @@
 CREATE TABLE partida (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),  
-    codigo VARCHAR(50) NOT NULL,  
-    data_inicio TIMESTAMP NOT NULL, 
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    codigo VARCHAR(50) NOT NULL,
+    pagamento BOOLEAN,
+    data_inicio TIMESTAMP NOT NULL,
     data_fim TIMESTAMP,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT current_timestamp
 );
 
-
 CREATE TABLE partida_videos (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(), 
-    partida_id UUID NOT NULL, 
-    path VARCHAR(255) NOT NULL,  
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  
-    FOREIGN KEY (partida_id) REFERENCES partida(id) 
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    partida_id UUID NOT NULL,
+    path VARCHAR(255) NOT NULL,
+    thumbnail TEXT,
+    pagamento BOOLEAN,
+    created_at TIMESTAMP DEFAULT current_timestamp,
+    CONSTRAINT fk_partida
+        FOREIGN KEY (partida_id) 
+        REFERENCES partida (id) 
+        ON DELETE CASCADE
 );
 
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO teste;

@@ -1,7 +1,10 @@
 from datetime import datetime
+import sys
+import os
 
-from server.db.connection import Partida, PartidaVideos, get_db_session
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
+from db.connection import Partida, PartidaVideos, get_db_session
 
 def criar_partida(codigo, pagamento, data_inicio, data_fim=None):
     with get_db_session() as session:
@@ -82,7 +85,9 @@ def pegar_jogadas_por_partida(partida_id):
                     'id': video.id,
                     'partida_id': video.partida_id,
                     'path': video.path,
-                    'created_at': video.created_at
+                    'created_at': video.created_at,
+                    'thumbnail': video.thumbnail,
+                    'pagamento': video.pagamento
                 } for video in videos
             ]
         else:

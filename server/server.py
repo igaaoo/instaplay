@@ -10,7 +10,7 @@ CORS(app)
 BASE_DIRECTORY = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 VIDEO_DIRECTORY = os.path.join(BASE_DIRECTORY, 'static', 'videos')
 
-@app.route('/api/videos/<filename>', methods=['GET'])
+@app.route('/partida/video/<filename>', methods=['GET'])
 def get_video(filename):
     video_path = os.path.join(VIDEO_DIRECTORY, filename)
     print(f"video_path {video_path}")
@@ -23,15 +23,18 @@ def get_video(filename):
 
 @app.route('/partida/<codigo>', methods=['GET'])
 def obter_partida(codigo):
+    print(codigo)
     try:
         partida = pegar_partida(codigo)
+        jogadas = pegar_jogadas_por_partida(partida.id)
         if partida:
             return jsonify({
                 'id': partida.id,
                 'codigo': partida.codigo,
                 'pagamento': partida.pagamento,
                 'data_inicio': partida.data_inicio,
-                'data_fim': partida.data_fim
+                'data_fim': partida.data_fim,
+                "jogadas": jogadas
             }), 200
         else:
             return jsonify({'message': 'Partida não encontrada'}), 404
@@ -50,4 +53,4 @@ def obter_jogadas_por_partida(partida_id):
         return jsonify({'message': str(e)}), 400
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
