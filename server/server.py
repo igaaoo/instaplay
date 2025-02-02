@@ -2,7 +2,7 @@ import os
 from flask import Flask, jsonify, send_file
 from flask_cors import CORS
 
-from services.partidas_service import pegar_jogadas_por_partida, pegar_partida
+from server.services.partidas_service import pegar_jogadas_por_partida, pegar_partida
 
 app = Flask(__name__)
 CORS(app)
@@ -51,6 +51,9 @@ def obter_jogadas_por_partida(partida_id):
             return jsonify({'message': 'Jogadas para a partida não encontradas'}), 404
     except ValueError as e:
         return jsonify({'message': str(e)}), 400
+
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
