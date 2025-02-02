@@ -1,12 +1,19 @@
+-- Criar extensão para UUID
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+-- Criar tabela de partidas
 CREATE TABLE partida (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    quadra INT,
     codigo VARCHAR(50) NOT NULL,
     pagamento BOOLEAN,
+    ativa BOOLEAN,
     data_inicio TIMESTAMP NOT NULL,
     data_fim TIMESTAMP,
     created_at TIMESTAMP DEFAULT current_timestamp
 );
 
+-- Criar tabela de vídeos das partidas
 CREATE TABLE partida_videos (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     partida_id UUID NOT NULL,
@@ -19,9 +26,3 @@ CREATE TABLE partida_videos (
         REFERENCES partida (id) 
         ON DELETE CASCADE
 );
-
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO teste;
-
-GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO teste;
-
-ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO teste;
