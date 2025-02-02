@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, String, UUID, TIMESTAMP, func, Boolean
+from sqlalchemy import create_engine, Column, String, UUID, TIMESTAMP, func, Boolean, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import uuid
@@ -25,6 +25,8 @@ Base = declarative_base()
 class Partida(Base):
     __tablename__ = 'partida'
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    quadra = Column(Integer, nullable=False)
+    ativa = Column(Boolean, nullable=False, default=True)
     codigo = Column(String(50), nullable=False)
     pagamento = Column(Boolean)
     data_inicio = Column(TIMESTAMP, nullable=False)

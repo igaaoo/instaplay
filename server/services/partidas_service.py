@@ -4,7 +4,7 @@ import os
 
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-from db.connection import Partida, PartidaVideos, get_db_session
+from server.db.connection import Partida, PartidaVideos, get_db_session
 
 def criar_partida(codigo, pagamento, data_inicio, data_fim=None):
     with get_db_session() as session:
@@ -12,7 +12,9 @@ def criar_partida(codigo, pagamento, data_inicio, data_fim=None):
             codigo=codigo,
             pagamento=pagamento,
             data_inicio=data_inicio,
-            data_fim=data_fim
+            data_fim=data_fim,
+            quadra=1,
+            ativa=True
         )
         session.add(nova_partida)
         session.commit()  
@@ -36,11 +38,12 @@ def finalizar_partida(partida_id, data_fim=None):
         partida = session.query(Partida).filter_by(id=partida_id).first()
         if partida:
             partida.data_fim = data_fim
+            partida.ativa = False
             session.commit()
         else:
             raise ValueError("Partida não encontrada.")
 
-def salvar_partida_com_videos(partida):
+def salvar_partida(partida):
     with get_db_session():
         nova_partida_id = criar_partida(
             codigo=partida["codigo"],
@@ -48,16 +51,19 @@ def salvar_partida_com_videos(partida):
             data_inicio=partida["data_inicio"],
             data_fim=partida.get("data_fim")
         )
-
-        for video in partida["videos"]:
-            adicionar_video(
-                partida_id=nova_partida_id,
-                path=video["path"],
-                thumbnail=video["thumbnail"],
-                created_at=video["created_at"]
-            )
-
         return nova_partida_id
+    
+def salvar_video(partida_id, path, thumbnail, created_at):
+    with get_db_session() as session:
+        novo_video = PartidaVideos(
+            partida_id=partida_id,
+            path=path,
+            thumbnail=thumbnail,
+            created_at=created_at,
+            pagamento=False
+        )
+        session.add(novo_video)
+        session.commit()
     
 def pegar_partida(codigo):
     with get_db_session() as session:
