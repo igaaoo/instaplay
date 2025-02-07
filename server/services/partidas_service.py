@@ -10,7 +10,7 @@ def criar_partida(codigo, pagamento, data_inicio, data_fim=None):
     with get_db_session() as session:
         nova_partida = Partida(
             codigo=codigo,
-            pagamento=pagamento,
+            pagamento=True,
             data_inicio=data_inicio,
             data_fim=data_fim,
             quadra=1,
@@ -27,7 +27,8 @@ def adicionar_video(partida_id, path, thumbnail, created_at=None):
             partida_id=partida_id,
             path=path,
             thumbnail=thumbnail,
-            created_at=created_at
+            created_at=created_at,
+            pagamento=True
         )
         session.add(novo_video)
         session.commit()
@@ -60,7 +61,7 @@ def salvar_video(partida_id, path, thumbnail, created_at):
             path=path,
             thumbnail=thumbnail,
             created_at=created_at,
-            pagamento=False
+            pagamento=True
         )
         session.add(novo_video)
         session.commit()

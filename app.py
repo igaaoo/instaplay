@@ -35,7 +35,8 @@ def gesture_detection():
     }
 
     start_time = time.time()
-    time_end = 30  # Tempo limite da captura
+    # set time to 10min
+    time_end = 6000
 
     partida_id = salvar_partida(partida)
 
