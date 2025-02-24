@@ -41,11 +41,6 @@ def detect_gesture(frame):
         right_arm_raised = right_wrist.y < right_elbow.y < right_shoulder.y
         
         if left_arm_raised or right_arm_raised:
-            # Desenha os landmarks em verde para indicar o braço levantado
-            mp_drawing.draw_landmarks(frame, results.pose_landmarks, mp_pose.POSE_CONNECTIONS,
-                                      mp_drawing.DrawingSpec(color=(0, 255, 0), thickness=2, circle_radius=4),
-                                      mp_drawing.DrawingSpec(color=(0, 0, 255), thickness=2, circle_radius=2))
-            
             # Aumenta o contador de frames consecutivos com o braço levantado
             gesture_counter += 1
             print(f"Braço levantado: {gesture_counter}")
