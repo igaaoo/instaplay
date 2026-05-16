@@ -24,49 +24,42 @@ def save_video_with_watermark(fps):
     # Defina o caminho do vídeo como .mp4
     video_path_mp4 = new_path.replace('.avi', '.mp4')
 
-    # Inicialize o escritor de vídeo com a resolução do primeiro frame e o codec H264 para MP4
     frame_height, frame_width = frames[0].shape[:2]
     out = cv2.VideoWriter(f"{VIDEO_PATH}{video_path_mp4}", cv2.VideoWriter_fourcc(*'mp4v'), fps, (frame_width, frame_height))
 
-    # Carregar o logo com transparência (RGBA)
+    # Carregar o logo com canal alpha (RGBA)
     logo = cv2.imread(WATERMARK_PATH, cv2.IMREAD_UNCHANGED)
     if logo is None:
         print("Erro ao carregar a marca d'água. Verifique o caminho do arquivo.")
         return None
 
-    # Redimensionar o logo, se necessário
-    logo_height, logo_width = logo.shape[:2]
-    scaling_factor = 100 / logo_width
-    logo = cv2.resize(logo, (int(logo_width * scaling_factor), int(logo_height * scaling_factor)))
+    # Redimensionar para 15% da largura do frame — proporcional à resolução
+    target_width = max(80, int(frame_width * 0.15))
+    logo_h, logo_w = logo.shape[:2]
+    target_height = int(logo_h * target_width / logo_w)
+    interp = cv2.INTER_AREA if target_width < logo_w else cv2.INTER_CUBIC
+    logo = cv2.resize(logo, (target_width, target_height), interpolation=interp)
 
-    # Separar os canais do logo (RGBA)
+    # Separar canais e pré-calcular máscaras em float32 (evita artefatos de arredondamento)
     b, g, r, alpha = cv2.split(logo)
-    overlay_color = cv2.merge((b, g, r))
-    mask = cv2.merge((alpha, alpha, alpha)) / 255.0
-    mask_inv = 1 - mask
+    overlay_color = cv2.merge((b, g, r)).astype(np.float32)
+    mask = alpha.astype(np.float32) / 255.0
+    mask = np.stack([mask, mask, mask], axis=2)  # (H, W, 3)
+    mask_inv = 1.0 - mask
 
-    # Verificar se o VideoWriter foi corretamente criado
+    logo_h, logo_w = logo.shape[:2]
+    x_pos = frame_width - logo_w - 20
+    y_pos = frame_height - logo_h - 20
+
     if not out.isOpened():
         print("Erro ao abrir o VideoWriter.")
         return None
 
-    # Processo de adicionar a marca d'água e salvar os frames
     for frame in frames:
-        overlay = frame.copy()
-        
-        # Calcular a posição do logo no canto inferior direito
-        x_position = frame_width - logo.shape[1] - 10
-        y_position = frame_height - logo.shape[0] - 10
-
-        # Definir a região de interesse (ROI) no frame onde o logo será inserido
-        roi = overlay[y_position:y_position + logo.shape[0], x_position:x_position + logo.shape[1]]
-
-        # Aplicar a máscara ao ROI
-        roi = roi * mask_inv + overlay_color * mask
-        overlay[y_position:y_position + logo.shape[0], x_position:x_position + logo.shape[1]] = roi
-
-        # Escrever o frame com a marca d'água no arquivo de vídeo
-        out.write(overlay)
+        roi = frame[y_pos:y_pos + logo_h, x_pos:x_pos + logo_w].astype(np.float32)
+        blended = (roi * mask_inv + overlay_color * mask).astype(np.uint8)
+        frame[y_pos:y_pos + logo_h, x_pos:x_pos + logo_w] = blended
+        out.write(frame)
 
     out.release()
     print("Vídeo salvo com sucesso em formato MP4.")
