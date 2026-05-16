@@ -1,6 +1,8 @@
 opencv-python
-mediapipe
+ultralytics
 flask
+flask-cors
 sqlalchemy
 psycopg2
-flask-cors
+numpy
+pygame
